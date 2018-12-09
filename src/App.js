@@ -9,6 +9,20 @@ class App extends Component {
     result: null
   };
 
+  handleInput = event => {
+    this.setState({ amount: event.target.value });
+  };
+
+  handleCurrency = event => {
+    if (event.target.name === "fromcurrency") {
+      this.setState({ fromCurrency: event.target.value });
+    }
+    if (event.target.name === "tocurrency") {
+      this.setState({ toCurrency: event.target.value });
+    }
+    // console.log(event.target.value);
+  };
+
   render() {
     return (
       <div className="App">
