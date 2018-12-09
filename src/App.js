@@ -48,34 +48,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <div className="enter_amount">
-            <input
-              type="text"
-              name="amount"
-              value={this.state.amount}
-              onChange={this.handleInput}
-            />
-            <select
-              name="fromcurrency"
-              value={this.state.fromCurrency}
-              onChange={this.handleCurrency}
-            >
-              <option value="USD">US Dollar</option>
-              <option value="EUR">Euro</option>
-              <option value="JPY">Yen</option>
-            </select>
-            <select
-              name="tocurrency"
-              value={this.state.toCurrency}
-              onChange={this.handleCurrency}
-            >
-              <option value="USD">US Dollar</option>
-              <option value="EUR">Euro</option>
-              <option value="JPY">Yen</option>
-            </select>
-            <button onClick={this.convertHandler}>Convert</button>
-          </div>
-          <h3>{this.state.result}</h3>
+        <h2>
+          <span>Currency </span> Converter
+        </h2>
+        <div className="enter_amount">
+          <input
+            type="text"
+            name="amount"
+            value={this.state.amount}
+            onChange={this.handleInput}
+          />
+          <select
+            name="fromcurrency"
+            value={this.state.fromCurrency}
+            onChange={this.handleCurrency}
+          >
+            <option value="USD">US Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="JPY">Yen</option>
+          </select>
+          <select
+            name="tocurrency"
+            value={this.state.toCurrency}
+            onChange={this.handleCurrency}
+          >
+            <option value="USD">US Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="JPY">Yen</option>
+          </select>
+          <button onClick={this.convertHandler}>Convert</button>
+        </div>
+        <h3>{this.state.result}</h3>
       </div>
     );
   }
