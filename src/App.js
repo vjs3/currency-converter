@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios"
+import axios from "axios";
 import "./App.css";
 
 class App extends Component {
@@ -48,7 +48,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App">
           <div className="enter_amount">
             <input
               type="text"
@@ -77,7 +76,6 @@ class App extends Component {
             <button onClick={this.convertHandler}>Convert</button>
           </div>
           <h3>{this.state.result}</h3>
-        </div>
       </div>
     );
   }
