@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios"
 import "./App.css";
 
 class App extends Component {
@@ -21,6 +22,27 @@ class App extends Component {
       this.setState({ toCurrency: event.target.value });
     }
     // console.log(event.target.value);
+  };
+
+  convertHandler = () => {
+    if (this.state.fromCurrency !== this.state.toCurrency) {
+      axios
+        .get(
+          `https://api.exchangeratesapi.io/latest?base=${
+            this.state.fromCurrency
+          }&symbols=${this.state.toCurrency}`
+        )
+        .then(response => {
+          const result =
+            this.state.amount * response.data.rates[this.state.toCurrency];
+          this.setState({ result: result.toFixed(5) });
+        })
+        .catch(err => {
+          console.log("Opps", err.message);
+        });
+    } else {
+      this.setState({ result: "You cant convert the same currency!" });
+    }
   };
 
   render() {
