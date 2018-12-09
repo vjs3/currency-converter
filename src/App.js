@@ -49,9 +49,9 @@ class App extends Component {
     return (
       <div className="App">
         <h2>
-          <span>Currency </span> Converter
+          <span>Currency </span> <span>Converter</span>
         </h2>
-        <div className="enter_amount">
+        <div className="CurrencyForm">
           <input
             type="text"
             name="amount"
