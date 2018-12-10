@@ -53,8 +53,9 @@ class App extends Component {
         </h2>
         <div className="CurrencyForm">
           <input
-            type="text"
+            type="number"
             name="amount"
+            aria-label="amount-input"
             value={this.state.amount}
             onChange={this.handleInput}
           />
